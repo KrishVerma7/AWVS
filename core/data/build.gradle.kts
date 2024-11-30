@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -33,6 +34,11 @@ android {
 }
 
 dependencies {
+    //models module
+    implementation(project(":core:models"))
+
+    //firebase
+    implementation(libs.firebase.auth)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
