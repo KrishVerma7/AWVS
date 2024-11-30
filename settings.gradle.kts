@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "AWVS"
 include(":app")
+include(":core:data")
+include(":core:models")
