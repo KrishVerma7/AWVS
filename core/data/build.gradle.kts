@@ -1,7 +1,9 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.google.gms.google.services)
+    id("kotlin-kapt")
+    alias(libs.plugins.hilt)
+//    alias(libs.plugins.ksp.annotation.processor)
 }
 
 android {
@@ -39,6 +41,13 @@ dependencies {
 
     //firebase
     implementation(libs.firebase.auth)
+
+    //dagger hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+//    ksp(libs.hilt.android.compiler)   //KSP Annotation Processor
+    implementation(libs.androidx.hilt.navigation.compose) //hilt for navigation
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
